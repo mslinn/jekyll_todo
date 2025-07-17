@@ -2,14 +2,21 @@
 
 Generate a TODO block
 Options:
-  `id`
 
-Example:
+* `alert` - Apply the `alert` class to the generated HTML wrapper
+* `block` - Apply `display: block` to the generated HTML wrapper
+* `class` - Apply the given class to the generated HTML wrapper
+* `id` - Apply the given HTML id attribute to the generated HTML wrapper
+* `span` - Apply `display: inline` to the generated HTML wrapper
+* `style` - Apply the given CSS style to the generated HTML wrapper
+
+
+## Examples
 
 ```html
-  {% todo %}
-    blah blah blah
-  {% endtodo %}
+{% todo %}
+  blah blah blah
+{% endtodo %}
 ```
 
 Example:
