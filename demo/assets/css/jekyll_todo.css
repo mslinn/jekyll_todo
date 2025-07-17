@@ -1,0 +1,66 @@
+.alert {
+  hyphens: auto;
+  text-align: justify;
+}
+
+.alert.center {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.alert {
+  background-color: lightyellow;
+  border: 3pt solid gray;
+  color: black;
+  margin-bottom: 1.5em;
+  padding: 10px 1em 0.75em 1em;
+}
+
+#main-content .alert>h2,
+#main-content .alert>h3 {
+  margin-top: 0;
+}
+
+.alert> :last-child {
+  margin-bottom: 0;
+}
+
+.todo,
+.todo code {
+  color: white;
+  background-color: darkred;
+}
+
+fieldset.todo {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+span.todo {
+  border: 1px gray solid;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.todo {
+  padding: 0.7em;
+
+  a {
+    color: yellow;
+
+    :hover {
+      color: orange;
+    }
+  }
+
+  legend {
+    background: yellow;
+    border: 1px gray solid;
+    border-radius: 4px;
+    color: black;
+    font-family: $mono-font;
+    margin-top: 5px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}

@@ -1,8 +1,8 @@
 require 'spec_helper'
 require_relative '../lib/jekyll_todo'
 
-RSpec.describe JekyllTodoModule do
-  extend described_class # Define class methods from JekyllTodoModule
+RSpec.describe JekyllToDoModule do
+  extend described_class # Define class methods from JekyllToDoModule
 
   let(:logger) do
     PluginMetaLogger.instance.new_logger(self, PluginMetaLogger.instance.config)

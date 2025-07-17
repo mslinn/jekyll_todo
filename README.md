@@ -1,6 +1,24 @@
 # `Jekyll_todo` [![Gem Version](https://badge.fury.io/rb/jekyll_todo.svg)](https://badge.fury.io/rb/jekyll_todo)
 
-Description of JekyllTodo
+Generate a TODO block
+Options:
+  `id`
+
+Example:
+
+```html
+  {% todo %}
+    blah blah blah
+  {% endtodo %}
+```
+
+Example:
+
+```html
+{% todo id='todo1' %}
+  blah blah blah
+{% endtodo %}
+```
 
 
 ## Installation

@@ -2,14 +2,19 @@ require 'jekyll_plugin_support'
 require 'helper/jekyll_plugin_helper'
 require_relative 'jekyll_todo/version'
 
-# See https://www.mslinn.com/jekyll/10200-jekyll-plugin-background.html
-# See https://www.mslinn.com/jekyll/10400-jekyll-plugin-template-collection.html
+# Generate a TODO block
+# Options:
+#   `id`
 #
-# @example Heading for this example
-#   Describe what this example does
-#   {% my_block_tag param1="value1" %}
-#     Hello, world!
-#   {% endmy_block_tag %}
+# @example
+#   {% todo %}
+#     blah blah blah
+#   {% endtodo %}
+#
+# @example
+#   {% todo id='todo1' %}
+#     blah blah blah
+#   {% endtodo %}
 #
 # The Jekyll log level defaults to :info, which means all the Jekyll.logger statements below will not generate output.
 # You can control the log level when you start Jekyll.
@@ -17,14 +22,14 @@ require_relative 'jekyll_todo/version'
 # plugin_loggers:
 #   Todo: debug
 
-module JekyllTodo
+module JekyllToDo
   # This class implements the Jekyll  functionality
-  class Todo < JekyllSupport::JekyllBlock
+  class ToDo < JekyllSupport::JekyllBlock
     # Defines class methods, see https://mslinn.com/jekyll/10700-designing-for-testability.html:
-    extend TodoModule
+    extend JekyllToDoModule
 
     PLUGIN_NAME = 'todo'.freeze
-    VERSION = JekyllTodo::VERSION
+    VERSION = JekyllToDo::VERSION
 
     # See https://github.com/mslinn/jekyll_plugin_support#argument-parsing
     #
@@ -54,17 +59,35 @@ module JekyllTodo
     #
     # @return [string] markup to be rendered on web page
     def render_impl(content)
-      
+      @alert = @helper.parameter_specified? 'alert'
+      @alert_option = ' alert' if @alert
 
-      # Put your plugin logic here and modify the following return value.
+      @block = @helper.parameter_specified? 'block'
+      @block_option = ' display: block;' if @block
 
-      <<~HEREDOC
-        <pre class="example">
-          content = '#{content}'
-          
-          Remaining markup: '#{@helper.remaining_markup}'.
-        </pre>
-      HEREDOC
+      @class = @helper.parameter_specified? 'class'
+      @class_option = " #{@class}"
+
+      @id = @helper.parameter_specified? 'id'
+      @id_option = " id='@id'" if @id
+
+      @span = @helper.parameter_specified? 'span' unless @block
+
+      @style = @helper.parameter_specified? 'style'
+      @style_option = " style='#{@style}#{@block_option}'" if @style || @block_option
+
+      if @span
+        <<~END_MSG
+          <span class="todo#{@alert_option}#{@class_option}"#{@id_option}#{@style_option}>#{content}</span>
+        END_MSG
+      else
+        <<~END_MSG
+          <fieldset class="todo#{@alert_option}#{@class_option} rounded shadow"#{@id_option}#{@style_option}>
+          <legend>TODO</legend>
+            #{content}
+          </fieldset>
+        END_MSG
+      end
     rescue StandardError => e
       @logger.error { "#{self.class} died with a #{e.full_message}" }
       exit 3

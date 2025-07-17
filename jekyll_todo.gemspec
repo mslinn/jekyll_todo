@@ -5,8 +5,7 @@ Gem::Specification.new do |spec|
 
   spec.authors               = ['Mike Slinn']
   spec.description           = <<~END_DESC
-    Write a longer description of the gem.
-    Use as many lines as you like.
+    Generate a TODO block.
   END_DESC
   spec.email                 = ['mslinn@mslinn.com']
   spec.files                 = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
@@ -20,7 +19,7 @@ Gem::Specification.new do |spec|
     'source_code_uri'   => host,
   }
   spec.name                 = 'jekyll_todo'
-  spec.platform              = Gem::Platform::RUBY
+  spec.platform             = Gem::Platform::RUBY
   spec.post_install_message = <<~END_MESSAGE
 
     Thanks for installing #{spec.name}!
@@ -28,8 +27,9 @@ Gem::Specification.new do |spec|
   END_MESSAGE
   spec.require_paths         = ['lib']
   spec.required_ruby_version = '>= 3.1.0'
-  spec.summary               = 'Write summary of what the gem is for'
-  spec.version               = JekyllTodo::VERSION
+  spec.summary               = 'Generate a TODO block'
+  spec.version               = JekyllToDo::VERSION
   spec.add_dependency 'jekyll', '>= 3.5.0'
+  spec.add_dependency 'jekyll_draft'
   spec.add_dependency 'jekyll_plugin_support', '>= 1.0.3'
 end
