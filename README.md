@@ -1,7 +1,8 @@
 # `Jekyll_todo` [![Gem Version](https://badge.fury.io/rb/jekyll_todo.svg)](https://badge.fury.io/rb/jekyll_todo)
 
-Generate a TODO block
-Options:
+Generates a TODO block.
+
+## Options
 
 * `alert` - Apply the `alert` class to the generated HTML wrapper
 * `block` - Apply `display: block` to the generated HTML wrapper
@@ -26,6 +27,8 @@ Example:
   blah blah blah
 {% endtodo %}
 ```
+
+See `demo/index.html` for more examples.
 
 
 ## Installation
