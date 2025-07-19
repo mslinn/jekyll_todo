@@ -3,6 +3,10 @@ description: jekyll_todo demonstration.
 layout: default
 title: Exercising TODO Option Combinations
 ---
+<p>
+  Jekyll mode is <b>{{jekyll.environment}}</b>.
+</p>
+
 <!-- #region todo  (invoked without options) -->
 <h3 id="todo" class="code">todo  (invoked without options)</h3>
 {% todo %}
@@ -67,7 +71,8 @@ Test content for class
 <!-- #region todo mode=develop -->
 <h4 id="develop">todo mode=develop</h4>
 <p>
-  Nothing should be displayed when in production mode.
+  Nothing should be displayed when in production mode.<br>
+  Jekyll mode is <b>{{jekyll.environment}}</b>.
 </p>
 {% todo block mode='develop' %}
 content for development mode only
@@ -78,7 +83,8 @@ content for development mode only
 <!-- #region todo mode=prod -->
 <h4 id="develop">todo mode=prod</h4>
 <p>
-  Nothing should be displayed when in development mode.
+  Nothing should be displayed when in development mode.<br>
+  Jekyll mode is <b>{{jekyll.environment}}</b>.
 </p>
 {% todo block mode='prod' %}
 content for production mode only
