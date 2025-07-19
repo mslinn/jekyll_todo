@@ -71,10 +71,16 @@ module JekyllToDo
       @id = @helper.parameter_specified? 'id'
       @id_option = " id='@id'" if @id
 
+      @mode_specified = @helper.parameter_specified? 'mode'
+
       @span = @helper.parameter_specified? 'span' unless @block
 
       @style = @helper.parameter_specified? 'style'
       @style_option = " style='#{@style}#{@block_option}'" if @style || @block_option
+
+      @mode_specified = 'development' if @mode_specified&.start_with? 'develop'
+      @mode_specified = 'production' if @mode_specified&.start_with? 'prod'
+      return if @mode_specified && @mode_specified != @mode
 
       if @span
         <<~END_MSG

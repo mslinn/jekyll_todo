@@ -18,7 +18,7 @@ GIT
 PATH
   remote: ..
   specs:
-    jekyll_todo (0.1.0)
+    jekyll_todo (0.2.0)
       jekyll (>= 3.5.0)
       jekyll_draft
       jekyll_plugin_support (>= 1.0.3)

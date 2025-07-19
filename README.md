@@ -8,6 +8,13 @@ Generates a TODO block.
 * `block` - Apply `display: block` to the generated HTML wrapper
 * `class` - Apply the given class to the generated HTML wrapper
 * `id` - Apply the given HTML id attribute to the generated HTML wrapper
+* `mode` - Only generate the notice for the given [Jekyll `mode`](https://jekyllrb.com/docs/configuration/environments/).
+  The default is to generate the notice for all Jekyll modes.
+  For example:
+
+  * `mode=development` or `mode=develop` only generates the notice when in `development` mode.
+  * `mode=production` or `mode=prod` only generates the notice when in `production` mode.
+
 * `span` - Apply `display: inline` to the generated HTML wrapper
 * `style` - Apply the given CSS style to the generated HTML wrapper
 

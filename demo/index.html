@@ -1,61 +1,87 @@
 ---
 description: jekyll_todo demonstration.
 layout: default
-title: Exercising Parameter Combinations
+title: Exercising TODO Option Combinations
 ---
-<h2 id="tag_todo" class='code'>todo</h2>
-<!-- #region todo  (invoked without parameters) -->
-<h3 id="todo" class="code">todo  (invoked without parameters)</h3>
+<!-- #region todo  (invoked without options) -->
+<h3 id="todo" class="code">todo  (invoked without options)</h3>
 {% todo %}
-This is line 1 of the block content.<br>
+This is line 1 of the test content.<br>
 This is line 2.
 {% endtodo %}
 <!-- endregion -->
 
 
 <!-- #region todo id='asdf' -->
-<h3 id="todo" class="code">todo id='asdf'</h3>
+<h3 id="todo_id" class="code">todo id='asdf'</h3>
 {% todo id='asdf' %}
-This is line 1 of the block content.<br>
+This is line 1 of the test content.<br>
 This is line 2.
 {% endtodo %}
 <!-- endregion -->
 
 
 <!-- #region todo span -->
-<h3 id="todo" class="code">todo span</h3>
+<h3 id="todo_span" class="code">todo span</h3>
 <p>
   This is a paragraph with
   {% todo span %}TODO content{% endtodo %}.
 </p>
 <!-- endregion -->
 
+
 <!-- #region todo alert -->
-<h3 id="todo" class="code">todo alert</h3>
+<h3 id="todo_alert" class="code">todo alert</h3>
 {% todo alert %}
-TODO content
+Test content for alert
 {% endtodo %}.
 <!-- endregion -->
 
+
 <!-- #region todo style='background: #eee; color: green;'' -->
-<h3 id="todo" class="code">todo style='background: #eee; color: green;'</h3>
+<h3 id="todo_style" class="code">todo style='background: #eee; color: green;'</h3>
 {% todo style='background: #eee; color: green;' %}
-TODO content
+Test content for style
 {% endtodo %}.
 <!-- endregion -->
 
 
 <!-- #region todo block background: #eee; color: green; -->
-<h3 id="todo" class="code">todo block style='background: #eee; color: green;'</h3>
+<h3 id="todo_block" class="code">todo block style='background: #eee; color: green;'</h3>
 {% todo block style='background: #eee; color: green;' %}
-TODO content
+Test content
 {% endtodo %}.
 <!-- endregion -->
 
 
 <!-- #region todo background: #eee; color: green; -->
-<h3 id="todo" class="code">todo class='rounded shadow'</h3>
+<h3 id="todo_class" class="code">todo class='rounded shadow'</h3>
 {% todo class='rounded shadow' %}
-TODO content
+Test content for class
 {% endtodo %}.
+<!-- endregion -->
+
+
+<!-- #region todo mode -->
+<h3 id="todo_mode" class="code">todo mode</h3>
+<!-- #region todo mode=develop -->
+<h4 id="develop">todo mode=develop</h4>
+<p>
+  Nothing should be displayed when in production mode.
+</p>
+{% todo block mode='develop' %}
+content for development mode only
+{% endtodo %}.
+<!-- endregion -->
+
+
+<!-- #region todo mode=prod -->
+<h4 id="develop">todo mode=prod</h4>
+<p>
+  Nothing should be displayed when in development mode.
+</p>
+{% todo block mode='prod' %}
+content for production mode only
+{% endtodo %}.
+<!-- endregion -->
 <!-- endregion -->
