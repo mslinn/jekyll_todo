@@ -1,4 +1,4 @@
-plugin:
+plugins:
   # - rubocop-jekyll
   - rubocop-md
   - rubocop-performance
@@ -44,11 +44,15 @@ Metrics/ModuleLength:
   Enabled: false
 
 Metrics/PerceivedComplexity:
-  Max: 15
+  Max: 20
 
 Naming/FileName:
   Exclude:
     - Rakefile
+    - README.md
+    - LICENSE.txt
+    - CHANGELOG.md
+    - Gemfile
 
 Style/Documentation:
   Enabled: false

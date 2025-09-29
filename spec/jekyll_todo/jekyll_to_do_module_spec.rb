@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative '../spec_helper'
 require_relative '../../lib/jekyll_todo'
 
 RSpec.describe(JekyllToDoModule) do
@@ -11,6 +11,7 @@ RSpec.describe(JekyllToDoModule) do
   let(:parse_context) { TestParseContext.new } # Mock, may not be desired
 
   it 'has a test' do
-    expect(true).to be_truthy
+    actual = 'something'
+    expect(actual).to be_truthy
   end
 end

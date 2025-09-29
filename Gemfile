@@ -8,13 +8,10 @@ group :test, :development do
   gem 'gem-release', '>= 2.2.2', require: false
   gem 'rake', require: false
   gem 'rspec', require: false
+  gem 'rspec-match_ignoring_whitespace'
   gem 'rubocop', require: false
   gem 'rubocop-md', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
-end
-
-group :test do
-  gem 'rspec-match_ignoring_whitespace'
 end
