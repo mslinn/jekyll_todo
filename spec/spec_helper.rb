@@ -15,10 +15,9 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = '../spec/status_persistence.txt'
 end
 
-
 # None of the following is required if mocking Jekyll internal data structures is not required
 
-Registers = Struct.new(:page, :site)
+Registers = Struct.new(:page, :site) unless defined?(Registers)
 
 # Mock for Collections
 class Collections

@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../lib/jekyll_todo'
+require_relative '../../lib/jekyll_todo'
 
-RSpec.describe JekyllToDoModule do
-  extend described_class # Define class methods from JekyllToDoModule
+RSpec.describe(JekyllToDoModule) do
+  # extend described_class # Define class methods from JekyllToDoModule
 
   let(:logger) do
     PluginMetaLogger.instance.new_logger(self, PluginMetaLogger.instance.config)
@@ -11,6 +11,6 @@ RSpec.describe JekyllToDoModule do
   let(:parse_context) { TestParseContext.new } # Mock, may not be desired
 
   it 'has a test' do
-    expect(true).to be_true
+    expect(true).to be_truthy
   end
 end

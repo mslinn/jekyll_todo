@@ -1,4 +1,4 @@
-require:
+plugin:
   # - rubocop-jekyll
   - rubocop-md
   - rubocop-performance
